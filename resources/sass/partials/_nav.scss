@@ -1,0 +1,15 @@
+//navigation
+nav {
+   
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .nav {
+        display: flex;       
+    }
+    .nav--search {
+        flex: 1;
+    }
+}
