@@ -25,7 +25,11 @@
         </div>
         <div class="results-container__title">
             <div class="results-info">
-                <p>More info...</p>
+                <p>
+                    <a href="#" id="more_info">
+                        More info...
+                    </a>
+                </p>
             </div>
         </div>
         {{-- main results --}}
@@ -59,7 +63,10 @@
                 <img src="{{ asset('images/logo.png') }}" alt="">
             </div>
         </div>
+        
     </div>
+    {{-- TODO PLAYERS INFORMATION --}}
+    {{-- Click on more info.. animated drop down displaying playing information --}}
 </main>
 
 

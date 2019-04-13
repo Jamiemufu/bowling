@@ -136,6 +136,11 @@ nav .nav--search {
   padding: 0 15px 15px 15px;
 }
 
+.results-container__title .results-info a {
+  text-decoration: none;
+  color: #000;
+}
+
 .results-container__main {
   margin: auto;
   max-width: 1200px;
@@ -166,6 +171,7 @@ nav .nav--search {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 150px;
 }
 
 .results-container__main .results-team .score {
