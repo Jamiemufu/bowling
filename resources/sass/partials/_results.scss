@@ -1,75 +1,72 @@
 //RESULTS
 .results-container {
-    margin-top: 40px;
+    background: #0071bc;
     height: auto;
-    border: 1px solid lightgrey;
+    border: 2px solid white;
     border-right: none;
     border-left: none;
     width: 100%;
-    padding-bottom: 15px;
+    border-top: none;
+    padding-bottom: 40px;
+    color: white;
 
     p {
-        font-size: 14px;
+        font-size: 16px;
 
     }
 }
 
+.results-container:first-of-type {
+    border-top: 2px solid white;
+}
+
 .results-container__title {
     margin: auto;
-    max-width: 1050px;
+    max-width: 975px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
 
     .results-div {
         padding: 15px 15px 0 15px;
         text-transform: uppercase;
-
-        p {
-            font-weight: bold;
-        }
-    }
-
-    .results-venue {
-        padding: 15px 15px 0 15px;
-        text-transform: uppercase;
-
-        p {
-            font-weight: bold;
-        }
-
-        p:last-of-type {
-            text-align: right;
-        }
-    }
-
-    .results-ha {
-        padding: 0 15px 0 15px;
+        color: gold;
     }
 
     .results-date {
-        padding: 0 15px 0 15px;
+        padding: 15px 15px 0 15px;
         flex-grow: 1;
-        text-align: left;
+        text-align: right;
+        color: gold;
     }
 
     .results-info {
         flex-grow: 1;
-        text-align: right;
+        text-align: left;
         padding: 0 15px 15px 15px;
+        color: white;
+    }
+    
+    .results-vs {
+        height: 75px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        padding-top: 25px;
 
-        a {
-            text-decoration: none;
-            color: #000;
+        h1 {
+            font-weight: bold;
+            font-size: 14px;
         }
     }
 }
 
 .results-container__main {
     margin: auto;
-    max-width: 1200px;
-    height: 90px;
+    max-width: 1000px;
+    height: 120px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -77,54 +74,47 @@
     overflow: hidden;
 
     .results-logo {
-        background: gold;
-        height: 200px;
         width: 120px;
         display: flex;
         justify-content: center;
         align-items: center;
 
         img {
-            height: 80px;
+            height: 120px;
             width: auto;
         }
     }
 
     .results-team {
-        height: 200%;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 150px;
-        .score {
-            padding-top: 5px;
-            font-size: 18px;
-        }
+        width: 230px;
 
-        p {
-            line-height: 18px;
+        .results-team__header {
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 15px;
             text-align: center;
-            padding: 0;
-            margin: 0;
+
+            p {
+                font-size: 18px;
+                font-weight: normal;
+            }
         }
 
-        p:first-of-type {
-            font-size: 14px;
-
+        .results-team__score {
+            p {
+                font-size: 30px;
+                font-weight: bold;
+            }
         }
-    }
 
-    .results-vs {
-        height: 100%;
-        width: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        h1 {
-            font-weight: bold;
-            font-size: 14px;
-        }
     }
 
     .win {
@@ -132,7 +122,7 @@
     }
 
     .win-text {
-        color: green;
+        color: gold;
     }
 
     .lose {
@@ -140,25 +130,161 @@
     }
 
     .lose-text {
-        color: rgb(180, 4, 4);
+        color: white;
+    }
+    .home-team {
+        color: gold;
+    }
+    .away-team {
+        color: white;
     }
 
-    .home {
-        transform: rotate(15deg);
+}
 
-        img {
-            transform: rotate(-15deg);
+.more-info-button {
+    color: white;
+}
+
+.more-info-container {
+    width: 100%;
+    margin: auto;
+    //change to 0 when done
+    height: 0;
+    overflow: hidden;
+    transition: height 1s;
+
+    .more-info {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding-bottom: 20px;
+    }
+
+    .second {
+        border: none;
+        padding-bottom: 10px;
+    }
+
+}
+
+// USED FOR TRANSITION
+.event-height {
+    // convert to actual height value for aniumation
+    height: 800px;
+    transition: height 1s;
+}
+
+.more-info-title {
+    margin: auto;
+    width: 100%;
+    max-width: 700px;
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    padding: 25px 15px 0 15px;
+
+    .more-info-title__venue {
+        text-transform: uppercase;
+        color: gold;
+    }
+}
+
+.more-info-list {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .player-count {
+        padding: 5px 15px;
+        width: 25px;
+
+        li {
+            font-size: 12px;
+            text-align: center;
         }
     }
 
-    .away {
-        transform: rotate(-15deg);
+    .player-name {
+        width: 130px;
+        padding: 5px 15px;
 
-        img {
-            transform: rotate(15deg);
+        li {
+            font-size: 12px;
         }
     }
 
+    .player-club {
+        width: 150px;
+        padding: 5px 15px;
+
+        li {
+            font-size: 12px;
+            text-align: right;
+        }
+
+        li:last-of-type {
+            color: gold;
+        }
+    }
+
+    .player-score {
+        width: 25px;
+        padding: 5px 15px;
+
+        li {
+            font-size: 12px;
+        }
+
+        li:last-of-type {
+            font-weight: bold;
+        }
+    }
+}
+
+.more-info-players {
+    // background: lightblue;
+    margin: auto;
+    width: 100%;
+    max-width: 725px;
+    height: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+}
+
+@media(max-width: 700px) {
+
+    .more-info-players {
+        margin: auto;
+        justify-content: center;
+    }
+
+    .more-info-list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .more-info-title__venue {
+        text-align: center;
+    }
+    .event-height {
+        height: 1300px;
+        border-top: none;
+    }
 }
 
 @media (max-width: 600px) {
@@ -170,18 +296,14 @@
         flex-direction: column;
         border: none;
 
-        .results-div {
-            padding-top: 15px;
+        .results-info {
+            padding: 0 15px 20px 15px;
+            text-align: left;
         }
 
         .results-date {
-            padding-top: 15px;
-        }
-
-        .results-venue {
-            p:last-of-type {
-                text-align: center;
-            }
+            text-align: left;
+            padding: 0 15px;
         }
 
     }
@@ -198,22 +320,12 @@
 
         .results-team {
             padding: 15px;
+            width: 100%;
         }
 
-        .home {
-            transform: rotate(0deg);
-
-            img {
-                transform: rotate(0deg);
-            }
-        }
-
-        .away {
-            transform: rotate(0deg);
-
-            img {
-                transform: rotate(0deg);
-            }
+        .results-vs {
+            height: 10px;
+            padding-top: 30px;
         }
     }
 }

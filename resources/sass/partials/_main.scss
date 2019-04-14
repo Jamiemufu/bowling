@@ -1,51 +1,8 @@
 //main
-.content-container {
+main {
+    height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-    .col-50 {
-        border: 2px solid red;
-        height: 400px;
-        width: 600px;
-        flex-grow: 1;
-    }
-}
-
-.tableContainer {
-    margin: auto;
-    margin-top: 40px;
-    width: 100%;
-    max-width: 600px;
-
-    h1 {
-        font-family: 'Roboto', sans-serif;
-        width: 100%;
-        text-align: center;
-        padding-bottom: 5px;
-        font-size: 30px;
-    }
-
-    table {
-        margin: auto;
-        width: 100%;
-        text-align: left;
-        border: 1px solid rgb(180, 4, 4);
-
-        td,
-        th {
-            padding: 0 10px;
-        }
-
-        .latest--header {
-            background: rgb(180, 4, 4);
-            color: gold;
-        }
-
-        .latest--data {
-            background: gold;
-
-        }
-    }
+    flex-direction: column;
+    flex-grow: 1;
+    // background: #0071bc;
 }

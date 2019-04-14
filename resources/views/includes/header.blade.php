@@ -1,10 +1,15 @@
 <header>
-    <div class="container-fluid no-gutters">
-        <div class="row">
-            <div class="col">
+    
+        <div class="header-container">
+            <div class="logo">
                 <img class="logo" src="{{ asset('images/logo.png') }}" alt="">
             </div>
-        </div>
-    </div>
 
+            <div class="main-title">
+                <h1>
+                    WARWICKSHIRE & WORCESTERSHIRE 
+                    COUNTIES BOWLING ASSOCIATION
+                </h1>
+            </div>
+        </div>
 </header>

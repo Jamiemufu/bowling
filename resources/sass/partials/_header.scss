@@ -1,11 +1,39 @@
 header {
     width: 100%;
     margin: auto;
-    img {
-        display: block;
+    background: #05002f;
+    h1 {
+        font-size: 28px;
+        // font-family: 'Shrikhand', cursive;
+        font-family: Roboto;
+        line-height: 30px;
+    }
+
+    .header-container {
         margin: auto;
-        width: 200px;
-        margin-top: 30px;
+        width: 100%;
+        max-width: 1200px;
+        background: #05002f;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .logo {
+        width: 250px;
+        img {
+            margin: auto;
+            width: 250px;
+            padding: 25px;
+        }
+    }
+    .main-title {
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        padding-bottom: 30px;
     }
    
-}
+}   
