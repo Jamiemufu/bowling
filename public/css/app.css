@@ -117,7 +117,7 @@ main {
   color: white;
 }
 
-.results-container__title .results-vs {
+.results-vs {
   height: 75px;
   width: 50px;
   display: flex;
@@ -127,7 +127,7 @@ main {
   padding-top: 25px;
 }
 
-.results-container__title .results-vs h1 {
+.results-vs h1 {
   font-weight: bold;
   font-size: 14px;
 }

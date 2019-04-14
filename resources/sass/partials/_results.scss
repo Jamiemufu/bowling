@@ -46,20 +46,22 @@
         padding: 0 15px 15px 15px;
         color: white;
     }
-    
-    .results-vs {
-        height: 75px;
-        width: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        padding-top: 25px;
 
-        h1 {
-            font-weight: bold;
-            font-size: 14px;
-        }
+
+}
+
+.results-vs {
+    height: 75px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding-top: 25px;
+
+    h1 {
+        font-weight: bold;
+        font-size: 14px;
     }
 }
 
@@ -132,9 +134,11 @@
     .lose-text {
         color: white;
     }
+
     .home-team {
         color: gold;
     }
+
     .away-team {
         color: white;
     }
@@ -281,6 +285,7 @@
     .more-info-title__venue {
         text-align: center;
     }
+
     .event-height {
         height: 1300px;
         border-top: none;
