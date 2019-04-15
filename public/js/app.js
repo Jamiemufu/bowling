@@ -36831,14 +36831,14 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //show and hide of players div on click of more_info
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // On click height 100 for showing player data
+//show and hide of players div on click of more_info
 //set constants
 
 
 var PLAYERS = document.getElementsByClassName('more-info-container');
 var PLAYERS_EVENT = document.getElementsByClassName('more-info-button');
-var SCROLL_ANCHOR = document.getElementsByClassName('first');
-console.log(PLAYERS_EVENT); //loop through PLAYERS_EVENT array
+var SCROLL_ANCHOR = document.getElementsByClassName('first'); //loop through PLAYERS_EVENT array
 
 var _loop = function _loop(i) {
   //add onclick listener
@@ -36862,7 +36862,46 @@ var _loop = function _loop(i) {
 
 for (var i = 0; i < PLAYERS_EVENT.length; i++) {
   _loop(i);
+} //Check if home-team and add gold
+
+
+var HOME_TEAM = document.getElementsByClassName('results-team__header');
+var HOME_TEAM_NAME = "Warwick & Worcester";
+
+for (var i = 0; i < HOME_TEAM.length; i++) {
+  console.log(HOME_TEAM[i]);
+
+  if (HOME_TEAM[i].innerText === HOME_TEAM_NAME) {
+    HOME_TEAM[i].classList.add('home-team');
+  }
+} //Check between scores and highlight gold for winner
+
+
+var FIRST_SCORE = document.getElementsByClassName('first-score');
+var SECOND_SCORE = document.getElementsByClassName('second-score'); //set empty array
+
+var firstScore = [];
+var secondScore = []; //loop through and compare, add class to largest
+
+for (var _i = 0; _i < FIRST_SCORE.length; _i++) {
+  if (FIRST_SCORE[_i].innerText > SECOND_SCORE[_i].innerText) {
+    FIRST_SCORE[_i].classList.add('win-text');
+  } else {
+    SECOND_SCORE[_i].classList.add('win-text');
+  }
+} //loop through player score and get total
+
+
+var PLAYER_SCORE_HOME = document.getElementsByClassName('player-score-home');
+var homeScoreTotal = 0;
+var number = 0;
+
+for (var _i2 = 0; _i2 < PLAYER_SCORE_HOME.length; _i2++) {
+  result = PLAYER_SCORE_HOME[_i2].innerText;
+  console.log(result);
 }
+
+console.log(homeScoreTotal);
 
 /***/ }),
 

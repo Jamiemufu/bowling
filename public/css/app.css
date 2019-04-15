@@ -189,7 +189,15 @@ main {
 }
 
 .results-container__main .win-text {
-  color: gold;
+  color: gold !important;
+}
+
+.results-container__main .win-text p {
+  color: gold !important;
+}
+
+.results-container__main .win-text li:last-of-type {
+  color: gold !important;
 }
 
 .results-container__main .lose {
@@ -309,6 +317,7 @@ main {
 
 .more-info-list .player-score li:last-of-type {
   font-weight: bold;
+  color: gold;
 }
 
 .more-info-players {

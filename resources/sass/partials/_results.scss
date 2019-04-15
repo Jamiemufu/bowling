@@ -124,7 +124,13 @@
     }
 
     .win-text {
-        color: gold;
+        color: gold !important;
+        p {
+            color: gold !important;
+        }
+        li:last-of-type {
+            color: gold !important;
+        }
     }
 
     .lose {
@@ -248,6 +254,7 @@
 
         li:last-of-type {
             font-weight: bold;
+            color: gold;
         }
     }
 }
