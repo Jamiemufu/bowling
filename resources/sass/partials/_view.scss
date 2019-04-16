@@ -1,0 +1,161 @@
+//View match
+.more-info-button {
+    color: white;
+
+    a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+.more-info-container {
+    width: 100%;
+    margin: auto;
+    //change to 0 when done
+    height: 100%;
+    overflow: hidden;
+    transition: height 1s;
+    background: $dark-blue;
+    color: white;
+
+    .more-info {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding-bottom: 20px;
+    }
+
+    .second {
+        border: none;
+        padding-bottom: 10px;
+    }
+
+}
+
+// USED FOR TRANSITION
+.event-height {
+    // convert to actual height value for aniumation
+    height: 800px;
+    transition: height 1s;
+}
+
+.more-info-title {
+    margin: auto;
+    width: 100%;
+    max-width: 700px;
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    padding: 25px 15px 0 15px;
+
+    .more-info-title__venue {
+        text-transform: uppercase;
+        color: $gold;
+    }
+}
+
+.more-info-list {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .player-count {
+        padding: 5px 15px;
+        width: 25px;
+
+        li {
+            font-size: 12px;
+            text-align: center;
+        }
+    }
+
+    .player-name {
+        width: 130px;
+        padding: 5px 15px;
+
+        li {
+            font-size: 12px;
+        }
+    }
+
+    .player-club {
+        width: 150px;
+        padding: 5px 15px;
+
+        li {
+            font-size: 12px;
+            text-align: right;
+        }
+
+        li:last-of-type {
+            color: $gold;
+        }
+    }
+
+    .player-score {
+        width: 25px;
+        padding: 5px 15px;
+
+        li {
+            font-size: 12px;
+        }
+
+        li:last-of-type {
+            font-weight: bold;
+            color: $gold;
+        }
+    }
+}
+
+.more-info-players {
+    // background: lightblue;
+    margin: auto;
+    width: 100%;
+    max-width: 725px;
+    height: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+}
+
+
+@media(max-width: 700px) {
+
+    .more-info-players {
+        margin: auto;
+        justify-content: center;
+    }
+
+    .more-info-list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .more-info-title__venue {
+        text-align: center;
+    }
+
+    .event-height {
+        height: 1300px;
+        border-top: none;
+    }
+}

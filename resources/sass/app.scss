@@ -12,6 +12,7 @@
 @import 'partials/nav.scss';
 @import 'partials/main.scss';
 @import 'partials/results.scss';
+@import 'partials/view.scss';
 
 
 // Bootstrap
@@ -25,7 +26,6 @@
 //general styles
 html, body {
   width: 100%;
-  overflow-x: hidden;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

@@ -16,3 +16,4 @@
 // });
 
 Route::get('/results', 'Controller@index');
+Route::get('/results/view/{id}', 'Controller@show');

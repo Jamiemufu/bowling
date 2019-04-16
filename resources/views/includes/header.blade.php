@@ -12,10 +12,5 @@
                 </h1>
             </div>
 
-            <div class="main-title">
-                    <h1>
-                      RESULTS
-                    </h1>
-                </div>
         </div>
 </header>

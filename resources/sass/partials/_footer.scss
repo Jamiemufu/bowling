@@ -2,9 +2,10 @@ footer {
     display: flex;
     flex-direction: column;
     height: 50px;
-    background: #05002f;
+    background: $dark-blue;
     width: 100%;
     color: white;
+    border-top: 1px solid white;
     .footer-container {
         height: 100%;
         display: flex;

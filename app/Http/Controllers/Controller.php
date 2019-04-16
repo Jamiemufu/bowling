@@ -11,53 +11,32 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    /**
+     * index - show rall macthes
+     *
+     * @return void
+     */
     public function index()
     {
         // test data
-        $matches = [
-            // EXAMPLE
-            [
-                'match_id' => '1',
-                'division' => 'Senior County 2014 Championship',
-                'date' => '1st Jan 2019',
-                'home_team' => 'Warwick & Worcester',
-                'home_score' => '464',
-                'away_team' => 'Wales',
-                'away_score' => '434',
-                'home_venue' => 'Moor Lane Bowling Club',
-                'away_venue' => 'Esclusham Bowling Club'
-            ],
-            ['match_id' => '2','division' => 'Senior County 2013 Championship', 'date' => '2st Jan 2019','home_team' => 'Warwick & Worcester', 'home_score' => '434','away_team' => 'Coventry','away_score' => '454','home_venue' => 'Moor Lane Bowling Club', 'away_venue' => 'Esclusham Bowling Club']
-        ];
+        $matches = \App\matches::all();
+        //return view with all matches
+        return view('pages.results')->with('matches', $matches);
+    }
 
-        $venues = [
-            [
-                'venue_name' => 'Moor Lane Bowling Club',
-                'homeaway' => 'home',
-                'match_id' => '1'
-            ]
-        ];
+    /**
+     * show match of id
+     *
+     * @param  mixed $id
+     *
+     * @return void
+     */
+    public function show($id) {
+        //where match_id = id show all
+        $matches = \App\matches::where('id', $id)->get();
 
-        $players = [
-            // EXAMPLE
-            [
-                'player_id' => '1',
-                'player_name' => 'Ross Dunkley',
-                'player_club' => 'King George V',
-                'player_score' => '21',
-                'player_homeaway' => 'home'
-            ],
-            ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'home'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'home'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'home'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'home'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'home'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'home'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'home'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'home'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'home'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'home'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'home'],
-            [
-                'player_id' => '1',
-                'player_name' => 'Ross Dunkley',
-                'player_club' => 'King George V',
-                'player_score' => '21',
-                'player_homeaway' => 'away'
-            ],
-            ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'away'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'away'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'away'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'away'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'away'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'away'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'away'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'away'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'away'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'away'], ['player_id' => '2', 'player_name' => 'Ross Dunkley', 'player_club' => 'King George V', 'player_score' => '21', 'player_homeaway' => 'away']
-        ];
-        //return view with matches
-        return view('pages.home')->with('matches', $matches)->with('players', $players);
+        $players = \App\players::where('match_id', $id)->get();
+
+        return view('pages.view')->with('matches', $matches)->with('players', $players);
     }
 }

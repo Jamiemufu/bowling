@@ -16,23 +16,23 @@ const PLAYERS = document.getElementsByClassName('more-info-container');
 const PLAYERS_EVENT = document.getElementsByClassName('more-info-button');
 const SCROLL_ANCHOR = document.getElementsByClassName('first');
 //loop through PLAYERS_EVENT array
-for (let i = 0; i < PLAYERS_EVENT.length; i++) {
-    //add onclick listener
-    PLAYERS_EVENT[i].onclick = function() {
-        //add class to current player_event
-        PLAYERS[i].classList.toggle('event-height');
-        //change text
-        if (this.textContent === 'More info...') {
-            this.textContent ='Less info...';
-            //delay on scroll due to transition
-            setTimeout(function() {
-                SCROLL_ANCHOR[i].scrollIntoView({behavior: 'smooth'});
-            }, 650); 
-        } else {
-            this.textContent = "More info..."
-        } 
-    }
-}
+// for (let i = 0; i < PLAYERS_EVENT.length; i++) {
+//     //add onclick listener
+//     PLAYERS_EVENT[i].onclick = function() {
+//         //add class to current player_event
+//         PLAYERS[i].classList.toggle('event-height');
+//         //change text
+//         if (this.textContent === 'More info...') {
+//             this.textContent ='Less info...';
+//             //delay on scroll due to transition
+//             setTimeout(function() {
+//                 SCROLL_ANCHOR[i].scrollIntoView({behavior: 'smooth'});
+//             }, 650); 
+//         } else {
+//             this.textContent = "More info..."
+//         } 
+//     }
+// }
 
 //Check if home-team and add gold
 const HOME_TEAM = document.getElementsByClassName('results-team__header');

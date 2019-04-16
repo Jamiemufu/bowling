@@ -36839,31 +36839,24 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // On cli
 var PLAYERS = document.getElementsByClassName('more-info-container');
 var PLAYERS_EVENT = document.getElementsByClassName('more-info-button');
 var SCROLL_ANCHOR = document.getElementsByClassName('first'); //loop through PLAYERS_EVENT array
-
-var _loop = function _loop(i) {
-  //add onclick listener
-  PLAYERS_EVENT[i].onclick = function () {
-    //add class to current player_event
-    PLAYERS[i].classList.toggle('event-height'); //change text
-
-    if (this.textContent === 'More info...') {
-      this.textContent = 'Less info...'; //delay on scroll due to transition
-
-      setTimeout(function () {
-        SCROLL_ANCHOR[i].scrollIntoView({
-          behavior: 'smooth'
-        });
-      }, 650);
-    } else {
-      this.textContent = "More info...";
-    }
-  };
-};
-
-for (var i = 0; i < PLAYERS_EVENT.length; i++) {
-  _loop(i);
-} //Check if home-team and add gold
-
+// for (let i = 0; i < PLAYERS_EVENT.length; i++) {
+//     //add onclick listener
+//     PLAYERS_EVENT[i].onclick = function() {
+//         //add class to current player_event
+//         PLAYERS[i].classList.toggle('event-height');
+//         //change text
+//         if (this.textContent === 'More info...') {
+//             this.textContent ='Less info...';
+//             //delay on scroll due to transition
+//             setTimeout(function() {
+//                 SCROLL_ANCHOR[i].scrollIntoView({behavior: 'smooth'});
+//             }, 650); 
+//         } else {
+//             this.textContent = "More info..."
+//         } 
+//     }
+// }
+//Check if home-team and add gold
 
 var HOME_TEAM = document.getElementsByClassName('results-team__header');
 var HOME_TEAM_NAME = "Warwick & Worcester";
