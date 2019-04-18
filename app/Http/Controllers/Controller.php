@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -18,8 +17,9 @@ class Controller extends BaseController
      */
     public function index()
     {
-        // test data
-        $matches = \App\matches::all();
+        //show match summary
+        $matches = \App\matches::showMatch();
+        
         //return view with all matches
         return view('pages.results')->with('matches', $matches);
     }
@@ -31,11 +31,13 @@ class Controller extends BaseController
      *
      * @return void
      */
-    public function show($id) {
-        //where match_id = id show all
-        $matches = \App\matches::where('id', $id)->get();
+    public function show($id) 
+    {
+        //show match summary
+        $matches = \App\matches::showMatch();
 
-        $players = \App\players::where('match_id', $id)->get();
+        //populate player information
+        $players = \App\players::showPlayers();
 
         return view('pages.view')->with('matches', $matches)->with('players', $players);
     }

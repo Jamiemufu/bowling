@@ -17,13 +17,9 @@ class Matches extends Migration
         Schema::create('matches', function (Blueprint $table) {
             $table->increments('id');
             $table->string('division');
-            $table->date('match_date');
+            $table->string('date');
             $table->string('home_team');
-            $table->string('home_score');
             $table->string('away_team');
-            $table->string('away_score');
-            $table->string('home_venue');
-            $table->string('away_venue');
             $table->timestamps();
         });
     }

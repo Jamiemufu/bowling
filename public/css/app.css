@@ -371,11 +371,6 @@ main {
   font-size: 12px;
 }
 
-.more-info-list .player-score li:last-of-type {
-  font-weight: bold;
-  color: gold;
-}
-
 .more-info-players {
   margin: auto;
   width: 100%;

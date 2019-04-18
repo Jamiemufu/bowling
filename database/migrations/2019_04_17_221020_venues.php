@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Players extends Migration
+class Venues extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class Players extends Migration
      */
     public function up()
     {
-        //create players database
-        Schema::create('players', function(Blueprint $table) {
+        //
+        Schema::create('venues', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('club');
-            $table->timestamps();
+            $table->unsignedInteger('name');
         });
     }
 
@@ -31,7 +28,6 @@ class Players extends Migration
     public function down()
     {
         //
-
-        Schema::dropIfExists('players');
+        Schema::dropIfExists('venues');
     }
 }

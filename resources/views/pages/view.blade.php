@@ -15,7 +15,7 @@
 
         {{-- results info --}}
         <div class="results-date first">
-            <p>{{ $match->match_date }}</p>
+            <p>{{ $match->date }}</p>
         </div>
     </div>
 
@@ -78,7 +78,7 @@
     <div class="more-info">
         <div class="more-info-title">
             <div class="more-info-title__venue">
-                <p>Played at : {{$match->home_venue}}</p>
+                <p>Played at : </p>
             </div>
 
             <div class="more-info-title__venue">
@@ -102,9 +102,9 @@
                 <div class="player-name">
                     <ul>
                         @foreach ($players as $player)
-                            @if ($player->player_homeaway == 'home')
-                                <li>{{ $player->player_name }}</li>
-                            @endif
+                            {{-- @if ($player->player_homeaway == 'home') --}}
+                                <li>{{ $player->first_name }} {{ $player->last_name }}</li>
+                            {{-- @endif --}}
                         @endforeach
                     </ul>
                 </div>
@@ -112,9 +112,9 @@
                 <div class="player-club">
                     <ul>
                         @foreach ($players as $player)
-                            @if ($player->player_homeaway == 'home')
-                                <li>{{ $player->player_club }}</li>
-                            @endif
+                            {{-- @if ($player->player_homeaway == 'home') --}}
+                                <li>{{ $player->club }}</li>
+                            {{-- @endif --}}
                         @endforeach
                         {{-- SCORE HEADER --}}
                         <li>Score:</li>
@@ -123,7 +123,14 @@
 
                 <div class="player-score">
                     <ul>
-                        <li class="home-score win-text"></li>
+
+                        <li class="home-score win-text">
+                            @foreach ($players as $player)
+                            {{-- @if ($player->player_homeaway == 'home') --}}
+                               
+                            {{-- @endif --}}
+                            @endforeach
+                        </li>
                     </ul>
                 </div>
                 {{-- END CONTAINER --}}
@@ -143,9 +150,9 @@
                 <div class="player-name">
                     <ul>
                         @foreach ($players as $player)
-                            @if ($player->player_homeaway == 'away')
-                                <li>{{ $player->player_name }}</li>
-                            @endif
+                            {{-- @if ($player->player_homeaway == 'home') --}}
+                                <li>{{ $player->first_name }} {{ $player->last_name }}</li>
+                            {{-- @endif --}}
                         @endforeach
                     </ul>
                 </div>
@@ -154,9 +161,9 @@
                     <ul>
                         @foreach ($players as $player)
                         {{-- show only away --}}
-                            @if ($player->player_homeaway == 'away')
-                                <li>{{ $player->player_club }}</li>
-                            @endif
+                            {{-- @if ($player->player_homeaway == 'home') --}}
+                                <li>{{ $player->club }}</li>
+                            {{-- @endif --}}
                         @endforeach
                         {{-- SCORE HEADER --}}
                         <li>Score:</li>
@@ -165,7 +172,9 @@
 
                 <div class="player-score">
                     <ul>
-                       <li class="home-score win-text"></li>
+                       <li class="home-score win-text">
+                            <li>{{ $player->player_score }}</li>
+                       </li>
                     </ul>
                 </div>
                 {{-- END CONTAINER --}}
@@ -178,7 +187,7 @@
             <div class="more-info-title">
 
                 <div class="more-info-title__venue">
-                    <p>Played at: {{ $match->away_venue}}</p>
+                    <p>Played at:</p>
                 </div>
 
                 <div class="more-info-title__venue">
@@ -204,9 +213,9 @@
                     <div class="player-name">
                         <ul>
                             @foreach ($players as $player)
-                                @if ($player->player_homeaway == 'home')
-                                    <li>{{ $player->player_name }}</li>
-                                @endif
+                                {{-- @if ($player->player_homeaway == 'home') --}}
+                                    <li>{{ $player->first_name }} {{ $player->last_name }}</li>
+                                {{-- @endif --}}
                             @endforeach
                         </ul>
                     </div>
@@ -215,9 +224,9 @@
                         <ul>
                             @foreach ($players as $player)
                             {{-- show only away --}}
-                                @if ($player->player_homeaway == 'home')
-                                    <li>{{ $player->player_club }}</li>
-                                @endif
+                                {{-- @if ($player->player_homeaway == 'home') --}}
+                                    <li>{{ $player->club }}</li>
+                                {{-- @endif --}}
                             @endforeach
                             {{-- SCORE HEADER --}}
                             <li>Score:</li>
@@ -245,9 +254,9 @@
                     <div class="player-name">
                         <ul>
                             @foreach ($players as $player)
-                                @if ($player->player_homeaway == 'away')
-                                    <li>{{ $player->player_name }}</li>
-                                @endif
+                                {{-- @if ($player->player_homeaway == 'away') --}}
+                                    <li>{{ $player->first_name }} {{ $player->last_name }}</li>
+                                {{-- @endif --}}
                             @endforeach
                         </ul>
                     </div>
@@ -256,9 +265,9 @@
                         <ul>
                             @foreach ($players as $player)
                             {{-- show only away --}}
-                                @if ($player->player_homeaway == 'away')
-                                    <li>{{ $player->player_club }}</li>
-                                @endif
+                                {{-- @if ($player->player_homeaway == 'away') --}}
+                                    <li>{{ $player->club }}</li>
+                                {{-- @endif --}}
                             @endforeach
                             {{-- SCORE HEADER --}}
                             <li>Score:</li>
