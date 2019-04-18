@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Players extends Migration
+class Player extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class Players extends Migration
      */
     public function up()
     {
-        //create players database
-        Schema::create('players', function(Blueprint $table) {
+        //create player table
+        Schema::create('player', function(Blueprint $table) {
             $table->increments('id');
             $table->string('first_name');
             $table->string('last_name');
@@ -31,7 +31,6 @@ class Players extends Migration
     public function down()
     {
         //
-
-        Schema::dropIfExists('players');
+        Schema::dropIfExists('player');
     }
 }

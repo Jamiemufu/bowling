@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class PlayerGameUpdate extends Migration
+class MatchResults extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class PlayerGameUpdate extends Migration
      */
     public function up()
     {
-        //
-        Schema::table('player_game', function (Blueprint $table) {
-            $table->foreign('player_id')->references('id')->on('players');
+        //match_results
+        Schema::create('match_results', function(Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('home_score');
+            $table->unsignedInteger('away_score');
+            $table->unsignedInteger('match_id');
         });
     }
 
@@ -27,5 +30,6 @@ class PlayerGameUpdate extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('match_results');
     }
 }

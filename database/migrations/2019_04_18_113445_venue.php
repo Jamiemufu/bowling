@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Venues extends Migration
+class Venue extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class Venues extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('venues', function (Blueprint $table) {
+        //venue
+        Schema::create('venue', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('name');
+            $table->string('name');
+            $table->unsignedInteger('match_id')->nullable();
         });
     }
 
@@ -28,6 +29,6 @@ class Venues extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('venues');
+        Schema::dropIfExists('venue');
     }
 }

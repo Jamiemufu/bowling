@@ -18,7 +18,7 @@ class Controller extends BaseController
     public function index()
     {
         //show match summary
-        $matches = \App\matches::showMatch();
+        $matches = \App\Match::showMatches();
         
         //return view with all matches
         return view('pages.results')->with('matches', $matches);
@@ -34,10 +34,11 @@ class Controller extends BaseController
     public function show($id) 
     {
         //show match summary
-        $matches = \App\matches::showMatch();
-
+        $matches = \App\Match::showMatch($id);
+        //get venue name from id
+        
         //populate player information
-        $players = \App\players::showPlayers();
+        $players = \App\Player::showPlayers($id);
 
         return view('pages.view')->with('matches', $matches)->with('players', $players);
     }
