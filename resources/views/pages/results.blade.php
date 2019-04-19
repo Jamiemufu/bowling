@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @foreach ($matches as $match)
+    @foreach ($games as $game)
 
         @include('shared.matchSummary')
         

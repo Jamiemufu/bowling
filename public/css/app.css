@@ -304,7 +304,7 @@ main {
 .more-info-title {
   margin: auto;
   width: 100%;
-  max-width: 700px;
+  max-width: 725px;
   padding-top: 25px;
   display: flex;
   flex-direction: column;
@@ -320,8 +320,9 @@ main {
 }
 
 .more-info-list {
+  padding-top: 15px;
   width: 100%;
-  max-width: 700px;
+  max-width: 725px;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -329,56 +330,72 @@ main {
   align-items: center;
 }
 
+.more-info-list table {
+  height: 100%;
+  max-width: 700px;
+  font-size: 12px;
+  font-weight: lighter;
+  padding-right: 15px;
+}
+
 .more-info-list .player-count {
   padding: 5px 15px;
   width: 25px;
 }
 
-.more-info-list .player-count li {
+.more-info-list .player-count td {
+  padding-right: 15px;
   font-size: 12px;
   text-align: center;
 }
 
-.more-info-list .player-name {
-  width: 130px;
-  padding: 5px 15px;
+.more-info-list .player-round {
+  width: 25px;
 }
 
-.more-info-list .player-name li {
+.more-info-list .player-name {
+  width: 130px;
+}
+
+.more-info-list .player-name td {
+  padding-right: 15px;
   font-size: 12px;
 }
 
 .more-info-list .player-club {
-  width: 150px;
-  padding: 5px 15px;
+  width: 125px;
 }
 
-.more-info-list .player-club li {
+.more-info-list .player-club td {
+  padding-right: 15px;
   font-size: 12px;
   text-align: right;
 }
 
-.more-info-list .player-club li:last-of-type {
+.more-info-list .player-club td:last-of-type {
   color: gold;
 }
 
 .more-info-list .player-score {
   width: 25px;
-  padding: 5px 15px;
+  text-align: center;
 }
 
-.more-info-list .player-score li {
+.more-info-list .player-score td {
+  padding-right: 15px;
+  text-align: center;
   font-size: 12px;
 }
 
 .more-info-players {
   margin: auto;
   width: 100%;
-  max-width: 725px;
+  max-width: 700px;
   height: auto;
   margin-top: 10px;
   display: flex;
   flex-direction: row;
+  padding-left: 15px;
 }
 
 .more-info-players ul {

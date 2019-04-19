@@ -14,11 +14,13 @@ class PlayerGame extends Migration
     public function up()
     {
         //player_game
-        Schema::create('player_game', function (Blueprint $table) {
+        Schema::create('player_games', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('score');
             $table->string('home_away');
-            $table->unsignedInteger('match_id');
+            $table->unsignedInteger('round_played');
+            $table->string('venue_played');
+            $table->unsignedInteger('game_id');
             $table->unsignedInteger('player_id');
         });
     }
@@ -31,6 +33,6 @@ class PlayerGame extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('player_game');
+        Schema::dropIfExists('player_games');
     }
 }

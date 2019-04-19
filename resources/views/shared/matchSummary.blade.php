@@ -1,14 +1,14 @@
 <!-- START OF MATCH SUMMARY -->
 <div class="results-container">
-   <!-- match titles -->
+   <!-- game titles -->
     <div class="results-container__title">
-        <!--match division-->
+        <!--game division-->
         <div class="results-div">
-            <p>Division: {{ $match->division }}</p>
+            <p>Division: {{ $game->division }}</p>
         </div>
-        <!-- match date-->
+        <!-- game date-->
         <div class="results-date first">
-            <p>{{ $match->date }}</p>
+            <p>{{ $game->date }}</p>
         </div>
 
     </div>
@@ -20,7 +20,7 @@
             <p class="more-info-button">
                 <!-- if request is /results show more info -->
                 @if (request()->is('results'))
-                    <a href="{{ action('Controller@show', $match->id) }}"> More info... </a>
+                    <a href="{{ action('Controller@show', $game->id) }}"> More info... </a>
                 @else
                     <a href="/results"> Go back... </a>
                 @endif
@@ -43,11 +43,11 @@
         <div class="results-team">
 
             <div class="results-team__header">
-                <p>{{ $match->home_team }}</p>
+                <p>{{ $game->home_team }}</p>
             </div>
 
             <div class="results-team__score first-score">
-                <p class="score">{{ $match->home_score }}</p>
+                <p class="score">{{ $game->home_score }}</p>
             </div>
         </div>
 
@@ -59,11 +59,11 @@
         <div class="results-team">
 
             <div class="results-team__header">
-                <p>{{ $match->away_team }}</p>
+                <p>{{ $game->away_team }}</p>
             </div>
 
             <div class="results-team__score second-score">
-                <p class="score">{{ $match->away_score }}</p>
+                <p class="score">{{ $game->away_score }}</p>
             </div>
 
         </div>

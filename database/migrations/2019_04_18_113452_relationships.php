@@ -14,20 +14,13 @@ class Relationships extends Migration
     public function up()
     {
         //set the relationships
-        Schema::table('player_game', function (Blueprint $table) {
-            $table->foreign('player_id')->references('id')->on('player');
-            $table->foreign('match_id')->references('id')->on('match');
+       
+        Schema::table('player_games', function (Blueprint $table) {
+            $table->foreign('player_id')->references('id')->on('players');
+            $table->foreign('game_id')->references('id')->on('games');
         });
 
-        Schema::table('match_results', function (Blueprint $table) {
-            $table->foreign('match_id')->references('id')->on('match');
-        });
-
-        Schema::table('rounds', function (Blueprint $table) {
-            $table->foreign('match_id')->references('id')->on('match');
-            $table->foreign('player_id')->references('id')->on('player');
-        });
-
+       
     }
 
     /**
