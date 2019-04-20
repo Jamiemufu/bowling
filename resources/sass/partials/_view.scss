@@ -91,7 +91,11 @@
         }
     }
     .player-round {
-        width: 25px;
+        width: 35px;
+        
+        td {
+            text-align: center;
+        }
     }
     .player-name {
         width: 130px;

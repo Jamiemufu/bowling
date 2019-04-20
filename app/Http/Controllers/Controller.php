@@ -38,21 +38,33 @@ class Controller extends BaseController
     {
         
         //get match from id
-        $games = \App\Game::find($id)->get();
-       
-        //return players games WITH player function
-        $player_games = \App\Player_game::with('player')
+        $games = \App\Game::find($id)->with('home_venue_name')->with('away_venue_name')->get();
+
+        //split collection and save home_venue to query
+        foreach($games as $game)
+        {
+             $home = $game->home_venue;
+             $away = $game->away_venue;
+        }
+
+        //return HOME VENUE players games WITH player function for game ID
+        $home_games = \App\Player_game::with('player')
+                        ->with('player_venue')
                         ->where('game_id', $id)
-                        ->where('venue_played', 'Moor Lane Bowling Club')
+                        ->where('venue_played', $home)
                         ->get();
 
-        //********************************************************************* */
-        // TODO - AMEND DATABASE AND ADD VENUES AND ORGANISE GAME BETWEEN 2 VENUE  
-        //********************************************************************** */
+        //return AWAY VENUE and players games WITH player function for game ID
+        $away_games = \App\Player_game::with('player')
+                        ->with('player_venue')
+                        ->where('game_id', $id)
+                        ->where('venue_played', $away)
+                        ->get();
 
         return view('pages.view')
                 ->with('games', $games)
-                ->with('player_games', $player_games);
+                ->with('home_games', $home_games)
+                ->with('away_games', $away_games);
 
     }
 }

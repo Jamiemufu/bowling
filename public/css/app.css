@@ -350,7 +350,11 @@ main {
 }
 
 .more-info-list .player-round {
-  width: 25px;
+  width: 35px;
+}
+
+.more-info-list .player-round td {
+  text-align: center;
 }
 
 .more-info-list .player-name {

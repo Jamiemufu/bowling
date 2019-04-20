@@ -22,8 +22,8 @@ class Games extends Migration
             $table->string('away_team');
             $table->string('home_score');
             $table->string('away_score');
-            $table->string('home_venue');
-            $table->string('away_venue');
+            $table->unsignedInteger('home_venue');
+            $table->unsignedInteger('away_venue');
             $table->timestamps();
         });
     }

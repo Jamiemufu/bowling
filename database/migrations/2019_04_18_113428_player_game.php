@@ -19,7 +19,7 @@ class PlayerGame extends Migration
             $table->unsignedInteger('score');
             $table->string('home_away');
             $table->unsignedInteger('round_played');
-            $table->string('venue_played');
+            $table->unsignedInteger('venue_played');
             $table->unsignedInteger('game_id');
             $table->unsignedInteger('player_id');
         });

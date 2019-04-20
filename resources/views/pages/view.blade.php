@@ -17,7 +17,7 @@
             </div>
 
             <div class="more-info-title__venue">
-                <p>{{$game->home_venue}}</p>
+               <p>{{$game->home_venue_name->name}}</p>
             </div>
         </div>
 
@@ -28,13 +28,13 @@
                 {{-- HOME TEAM --}}
                 <table>
                     <tr>
-                        <th></th>
+                        <th>Rnd</th>
                         <th>Name</th>
                         <th>Club</th>
                         <th>Score</th>
                     </tr>
 
-                    @foreach ($player_games as $player)
+                    @foreach ($home_games as $player)
                         @if($player->home_away === 'home')
                             <tr>
                                 <td class=player-round>{{$player->round_played}}</td>
@@ -57,7 +57,7 @@
                         <th>Score</th>
                     </tr>
 
-                    @foreach ($player_games as $player)
+                    @foreach ($home_games as $player)
                         @if($player->home_away === 'away')
                             <tr>
                                 <td class="player-name">{{ $player->player->first_name }} {{ $player->player->last_name }}</td>
@@ -79,8 +79,10 @@
                 </div>
 
                 <div class="more-info-title__venue">
-                    <p>{{$game->away_venue}}</p>
-                </div>
+                        
+                        <p>{{$game->away_venue_name->name}}</p>
+                        
+                    </div>
                 {{-- set id to game id for scrolling --}}
             </div>
 
@@ -91,14 +93,16 @@
                     {{-- HOME TEAM --}}
                     <table>
                         <tr>
+                            <th>Rnd</th>
                             <th>Name</th>
                             <th>Club</th>
                             <th>Score</th>
                         </tr>
 
-                        @foreach ($player_games as $player)
+                        @foreach ($away_games as $player)
                             @if($player->home_away === 'home')
                                 <tr>
+                                    <td class=player-round>{{$player->round_played}}</td>
                                     <td class="player-name">{{ $player->player->first_name }} {{ $player->player->last_name }}</td>
                                     <td class=player-club>{{ $player->player->club }}</td>
                                     <td class="player-score">{{ $player->score }}</td>
@@ -118,7 +122,7 @@
                             <th>Score</th>
                         </tr>
 
-                        @foreach ($player_games as $player)
+                        @foreach ($away_games as $player)
                             @if($player->home_away === 'away')
                         <tr>
                             <td class="player-name">{{ $player->player->first_name }} {{ $player->player->last_name }}</td>

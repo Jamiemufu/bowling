@@ -15,8 +15,16 @@ class Player_game extends Model
     public function player()
     {
 
-        return $this->hasOne('App\Player', 'id');
+        return $this->hasOne('\App\Player', 'id');
         
     }
 
+    public function player_venue()
+    {
+
+        return $this->hasMany('\App\Venue', 'id');
+
+    }
+
+   
 }

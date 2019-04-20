@@ -19,4 +19,18 @@ class Game extends Model
 
     }
 
+    public function home_venue_name()
+    {
+
+        return $this->hasOne('\App\Venue', 'id', 'home_venue');
+
+    }
+
+    public function away_venue_name()
+    {
+
+        return $this->hasOne('\App\Venue', 'id', 'away_venue');
+
+    }
+
 }
