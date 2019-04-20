@@ -3,16 +3,19 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import 'partials/variables.scss';
+@import 'shared/variables.scss';
 
-//imports
-@import 'partials/fonts.scss';
-@import 'partials/header.scss';
-@import 'partials/footer.scss';
-@import 'partials/nav.scss';
-@import 'partials/main.scss';
-@import 'partials/results.scss';
-@import 'partials/view.scss';
+//shared
+@import 'shared/fonts.scss';
+@import 'shared/header.scss';
+@import 'shared/footer.scss';
+@import 'shared/nav.scss';
+@import 'shared/main.scss';
+
+//pages
+@import 'pages/results.scss';
+@import 'pages/view.scss';
+@import 'pages/venues.scss';
 
 
 // Bootstrap

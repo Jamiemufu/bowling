@@ -5,7 +5,6 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
-use App\Player_game;
 
 class Controller extends BaseController
 {
@@ -23,7 +22,7 @@ class Controller extends BaseController
         $games = \App\Game::all();
         
         //return view with all matches
-        return view('pages.results')->with('games', $games);
+        return view('pages.home')->with('games', $games);
 
     }
 
@@ -61,7 +60,7 @@ class Controller extends BaseController
                         ->where('venue_played', $away)
                         ->get();
 
-        return view('pages.view')
+        return view('pages.gameInfo')
                 ->with('games', $games)
                 ->with('home_games', $home_games)
                 ->with('away_games', $away_games);

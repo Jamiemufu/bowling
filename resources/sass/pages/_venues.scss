@@ -1,0 +1,156 @@
+//create venue
+.create-venue-container {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    max-width: 700px;
+
+    button {
+        padding: 5px;
+        width: 100px;
+        background: $dark-blue;
+        border: 1px solid white;
+        color: white;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+        font-family: Roboto;
+    }
+
+    .venue-box {
+        margin: auto;
+        margin-top: 50px;
+        padding: 15px;
+        width: 90%;
+        background: $light-blue;
+        max-width: 700px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid white;
+
+        .venue-alert {
+            margin-top: 20px;
+            border: 1px solid white;
+            width: 300px;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+    }
+
+    .venue-header {
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        button {
+            margin-top: 20px;
+            width: 160px;
+        }
+        h1 {
+            font-size: 24px;
+            line-height: 30px;
+        }
+    }
+
+    .venue-form {
+        padding: 20px 0;
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            input {
+                width: 250px;
+                padding: 5px;
+                outline-color: $dark-blue;
+                color: $dark-blue;
+            }
+
+        }
+    }
+
+    .venue-lists {
+        padding-top: 40px;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        color: white;
+        ul {
+            list-style: none;
+            padding: 0;
+            li {
+                height: 50px;
+            }
+        }
+
+        .venue-name {
+            flex-grow: 1;
+            padding: 5px;
+        }
+
+        .venue-name,.venue-edit,.venue-delete {
+            padding: 0 15px;
+        }
+
+    }
+    .venue-table {
+        width: 80%;
+        padding: 20px 0;
+        margin: 0;
+        color: white;
+
+        table {
+            margin: 0;
+
+            .venues-id {
+                width: 50px;
+            }
+
+        }
+    }
+
+    .venue-delete {
+        max-width: 700px;
+        height: auto;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: white;
+
+        .venue-name {
+            padding: 5px;
+            flex-grow: 1;
+        }
+        .venue-delete {
+            padding: 5px;
+        }
+
+    }
+    
+    @media(max-width: 500px) {
+        .venue-form {
+            form {
+                flex-direction: column;
+
+                button {
+                    margin-top: 15px;
+                }
+            }
+        }
+        .venue-delete {
+            flex-direction: column;
+        }
+    }
+}

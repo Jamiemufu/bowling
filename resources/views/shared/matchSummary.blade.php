@@ -19,10 +19,10 @@
 
             <p class="more-info-button">
                 <!-- if request is /results show more info -->
-                @if (request()->is('results'))
+                @if (request()->is('/'))
                     <a href="{{ action('Controller@show', $game->id) }}"> More info... </a>
                 @else
-                    <a href="/results"> Go back... </a>
+                    <a href="/"> Go back... </a>
                 @endif
             </p>
 

@@ -15,5 +15,14 @@
 //     return view('pages.home');
 // });
 
-Route::get('/results', 'Controller@index');
-Route::get('/results/view/{id}', 'Controller@show');
+//root and view
+Route::get('/', 'Controller@index');
+Route::get('/view/{id}', 'Controller@show');
+
+//venues
+Route::get('/venues', 'VenuesController@index');
+Route::get('/venues/create', 'VenuesController@create');
+Route::post('/venues', 'VenuesController@store');
+Route::get('/venues/edit/{id}', 'VenuesController@edit');
+Route::get('/venues/{id}', 'VenuesController@show');
+Route::delete('/venues/{id}', 'VenuesController@destroy');
