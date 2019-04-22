@@ -13,7 +13,7 @@ class VenuesController extends Controller
     */
     public function index()
     {
-        //show venues
+        
         $venues = \App\Venue::all();
         return view('pages.venues.showVenues')->with('venues', $venues);
     }
@@ -25,8 +25,9 @@ class VenuesController extends Controller
     */
     public function create()
     {
-        //
+
         return view('pages.venues.createVenues');
+
     }
 
     /**
@@ -37,7 +38,7 @@ class VenuesController extends Controller
     */
     public function store(Request $request)
     {
-        //
+        
         $venue = new \App\Venue;
         $venue->name=$request->input('venue_name');
         $venue->save();
@@ -54,7 +55,7 @@ class VenuesController extends Controller
     */
     public function show($id)
     {
-        //add sure to delete here
+        
         $venue = \App\Venue::find($id);
 
         return view('pages.venues.confirm')->with('venue', $venue);
@@ -68,9 +69,11 @@ class VenuesController extends Controller
     */
     public function edit($id)
     {
+
         $venue = \App\Venue::find($id);
         
         return view('pages.venues.editVenues')->with('venue', $venue);
+
     }
 
     /**
@@ -80,10 +83,7 @@ class VenuesController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    public function update(Request $request, $id) {}
 
     /**
     * Remove the specified resource from storage.
@@ -93,9 +93,11 @@ class VenuesController extends Controller
     */
     public function destroy($id)
     {
-        //
+        
         $venue = \App\Venue::find($id);
         $venue->delete();
+        
         return redirect('venues/')->with('status', "Venue sucessfully deleted!");
+
     }
 }

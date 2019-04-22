@@ -1,5 +1,5 @@
-//create venue
-.create-venue-container {
+//create players
+.create-players-container {
     margin: 0 auto;
     width: 100%;
     height: 100%;
@@ -7,7 +7,7 @@
 
     button {
         padding: 5px;
-        width: 100px;
+        width: 75px;
         background: $dark-blue;
         border: 1px solid white;
         color: white;
@@ -20,7 +20,52 @@
         font-family: Roboto;
     }
 
-    .venue-box {
+    .players-table {
+        width: 100%;
+        margin: auto;
+        padding-top: 30px;
+        color: white;
+
+        a {
+            text-decoration: underline;
+            color: white;
+        }
+
+        table {
+            width: 90%;
+            margin: auto;
+            text-align: left;
+            padding: 10px;
+
+            .player-id {
+                width: 30px;
+            }
+
+            .player-first {
+                width: 80px;
+            }
+
+            .player-last {
+                width: 80px;
+            }
+
+            .player-club {
+                width: 120px;
+            }
+
+            .player-edit {
+                width: 50px;
+                text-align: center;
+            }
+
+            .player-delete {
+                width: 50px;
+                text-align: center;
+            }
+        }
+    }
+
+    .players-box {
         margin: auto;
         margin-top: 50px;
         margin-bottom: 50px;
@@ -44,13 +89,21 @@
         }
     }
 
-    .venue-header {
+    .players-header {
         color: white;
         text-transform: uppercase;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+
         button {
             margin-top: 20px;
             width: 160px;
+        }
+
+        input {
+            margin-top: 20px;
+            padding: 5px;
         }
         h1 {
             font-size: 24px;
@@ -58,26 +111,37 @@
         }
     }
 
-    .venue-form {
-        padding: 20px 0;
 
+    .players-form {
+        padding: 20px 0;
+        
+        
         form {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 100%;
+            color: white;
 
-            input {
-                width: 250px;
-                padding: 5px;
-                outline-color: $dark-blue;
-                color: $dark-blue;
-            }
+           label {
+               width: 100px;
+               text-align: right;
+               padding: 5px 5px 5px 10px;
+           }
 
+           input {
+               width: 250px;
+               padding: 5px;
+           }
+
+           button {
+               margin-top: 15px;
+           }
         }
+
     }
 
-    .venue-lists {
+    .players-lists {
         padding-top: 40px;
         width: 100%;
         margin: auto;
@@ -94,33 +158,18 @@
             }
         }
 
-        .venue-name {
+        .players-name {
             flex-grow: 1;
             padding: 5px;
         }
 
-        .venue-name,.venue-edit,.venue-delete {
+        .players-name,.players-edit,.players-delete {
             padding: 0 15px;
         }
 
     }
-    .venue-table {
-        width: 80%;
-        padding: 20px 0;
-        margin: 0;
-        color: white;
 
-        table {
-            margin: 0;
-
-            .venues-id {
-                width: 50px;
-            }
-
-        }
-    }
-
-    .venue-delete {
+    .players-delete {
         max-width: 700px;
         height: auto;
         margin: auto;
@@ -130,18 +179,18 @@
         align-items: center;
         color: white;
 
-        .venue-name {
+        .players-name {
             padding: 5px;
             flex-grow: 1;
         }
-        .venue-delete {
+        .players-delete {
             padding: 5px;
         }
 
     }
     
     @media(max-width: 500px) {
-        .venue-form {
+        .players-form {
             form {
                 flex-direction: column;
 
@@ -150,8 +199,9 @@
                 }
             }
         }
-        .venue-delete {
+        .players-delete {
             flex-direction: column;
         }
+
     }
 }

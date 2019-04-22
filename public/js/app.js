@@ -36831,32 +36831,8 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // On click height 100 for showing player data
-//show and hide of players div on click of more_info
-//set constants
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Check if home-team and add gold
 
-
-var PLAYERS = document.getElementsByClassName('more-info-container');
-var PLAYERS_EVENT = document.getElementsByClassName('more-info-button');
-var SCROLL_ANCHOR = document.getElementsByClassName('first'); //loop through PLAYERS_EVENT array
-// for (let i = 0; i < PLAYERS_EVENT.length; i++) {
-//     //add onclick listener
-//     PLAYERS_EVENT[i].onclick = function() {
-//         //add class to current player_event
-//         PLAYERS[i].classList.toggle('event-height');
-//         //change text
-//         if (this.textContent === 'More info...') {
-//             this.textContent ='Less info...';
-//             //delay on scroll due to transition
-//             setTimeout(function() {
-//                 SCROLL_ANCHOR[i].scrollIntoView({behavior: 'smooth'});
-//             }, 650); 
-//         } else {
-//             this.textContent = "More info..."
-//         } 
-//     }
-// }
-//Check if home-team and add gold
 
 var HOME_TEAM = document.getElementsByClassName('results-team__header');
 var HOME_TEAM_NAME = "Warwick & Worcester";
@@ -36894,7 +36870,19 @@ for (var _i2 = 0; _i2 < PLAYER_SCORE_HOME.length; _i2++) {
   console.log(result);
 }
 
-console.log(homeScoreTotal);
+console.log(homeScoreTotal); //check for alert then hide after delay for flash messages
+
+var ALERT = document.getElementsByClassName('alert');
+
+var _loop = function _loop(_i3) {
+  setTimeout(function () {
+    ALERT[_i3].style.display = 'none';
+  }, 6000);
+};
+
+for (var _i3 = 0; _i3 < ALERT.length; _i3++) {
+  _loop(_i3);
+}
 
 /***/ }),
 

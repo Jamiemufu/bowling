@@ -11,17 +11,17 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     /**
-    * index - show rall macthes
+    * index - show all games
     *
     * @return void
     */
     public function index()
     {
 
-        //show match summary
+        //show games from model
         $games = \App\Game::all();
         
-        //return view with all matches
+        //return view with all games
         return view('pages.home')->with('games', $games);
 
     }
@@ -36,30 +36,31 @@ class Controller extends BaseController
     public function show($id) 
     {
         
-        //get match from id
+        //get game from id
         $games = \App\Game::find($id)->with('home_venue_name')->with('away_venue_name')->get();
 
-        //split collection and save home_venue to query
+        //split collection and save home_venue and away vebue
         foreach($games as $game)
         {
              $home = $game->home_venue;
              $away = $game->away_venue;
         }
 
-        //return HOME VENUE players games WITH player function for game ID
+        //HOME VENUE players games WITH player from model for game ID
         $home_games = \App\Player_game::with('player')
                         ->with('player_venue')
                         ->where('game_id', $id)
                         ->where('venue_played', $home)
                         ->get();
 
-        //return AWAY VENUE and players games WITH player function for game ID
+        //AWAY VENUE and players games WITH player function for game ID
         $away_games = \App\Player_game::with('player')
                         ->with('player_venue')
                         ->where('game_id', $id)
                         ->where('venue_played', $away)
                         ->get();
 
+        //return view with collections
         return view('pages.gameInfo')
                 ->with('games', $games)
                 ->with('home_games', $home_games)
