@@ -15,7 +15,7 @@ class PlayersController extends Controller
     public function index()
     {
 
-        $players = \App\player::all();
+        $players = \App\Player::all();
         return view('pages.players.showPlayers')->with('players', $players);
 
     }
