@@ -37,7 +37,7 @@ class Controller extends BaseController
     {
         
         //get game from id
-        $games = \App\Game::find($id)->with('home_venue_name')->with('away_venue_name')->get();
+        $games = \App\Game::where('id', $id)->with('home_venue_name')->with('away_venue_name')->get();
 
         //split collection and save home_venue and away vebue
         foreach($games as $game)
