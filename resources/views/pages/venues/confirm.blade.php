@@ -6,14 +6,14 @@
 
     <div class="venue-box">
 
-        <div class="venue-header">
+        <div class="venue-header confirm">
             <h1>Delete Venue</h1>
         </div>
         
         
         <div class="venue-delete">
             <form method="post" action="{{ action('VenuesController@destroy', $venue->id) }}">
-                @csrf
+                @csrf   
                 @method('delete')
 
                 <div class="venue-name">
@@ -21,7 +21,7 @@
                 </div>
 
 
-                <div class="venue-delete">
+                <div class="venue-delete confirm">
                     <button type="submit">Delete</button></li>
                 </div>
             </form>

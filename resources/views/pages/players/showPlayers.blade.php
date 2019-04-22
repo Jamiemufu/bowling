@@ -12,31 +12,33 @@
                 <h1>Search Results</h1>
             @else
                 <h1>Players</h1>
-            @endif
-            
-            @if (Request::path() !== 'players/search')
-                <div>
-                    <form action="/players/search" method="POST">
-                        @csrf
-                        <input type="text" name="search">
-                        <a href="/players/search">
-                            <button>Search Players</button>
-                        </a>
-                    </form>
-                </div>
-
                 <a href="/players/create">
                     <button type="button">Create a new Player</button>
                 </a>
             @endif
-        </div>
-        
+            
             @if (session('status'))
                 <div class="alert">
                     {{ session('status') }}
                 </div>
             @endif
 
+        </div>
+    </div>
+    <div class="players-results">
+        <div class="players-header">
+            @if (Request::path() !== 'players/search')
+            <div>
+                <form action="/players/search" method="POST">
+                    @csrf
+                    <input type="text" name="search" placeholder="Search Players">
+                    <a href="/players/search">
+                        <button>Search Players</button>
+                    </a>
+                </form>
+            </div>
+            @endif
+        </div>
         <div class="players-table">
             
             <table>

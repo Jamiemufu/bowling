@@ -6,7 +6,7 @@
 
     <div class="players-box">
 
-        <div class="players-header">
+        <div class="players-header confirm">
             <h1>Delete Player</h1>
         </div>
         
@@ -21,7 +21,7 @@
                 </div>
 
 
-                <div class="players-delete">
+                <div class="players-delete confirm">
                     <button type="submit">Delete</button></li>
                 </div>
             </form>
