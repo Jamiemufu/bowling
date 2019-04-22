@@ -5,7 +5,6 @@
 <div class="create-venue-container">
 
     <div class="venue-box">
-
         <div class="venue-header">
             <h1>Venues</h1>
 
@@ -19,6 +18,9 @@
                 {{ session('status') }}
             </div>
         @endif
+    </div>
+
+    <div class="venue-results">
 
         <div class="venue-lists">
             
@@ -35,8 +37,9 @@
                     @foreach ($venues as $venue)
                         <li class="venues-edit">
                             <a href="{{ action('VenuesController@edit', $venue->id) }}">
-                                <button type="button">Edit</button></li>
+                                <button type="button">Edit</button>
                             </a>
+                        </li>
                     @endforeach
                 </ul>
             </div>
@@ -46,14 +49,15 @@
                     @foreach ($venues as $venue)
                         <li class="venues-delete">
                             <a href="{{ action('VenuesController@destroy', $venue->id) }}">
-                                <button type="button">Delete</button></li>
+                                <button type="button">Delete</button>
                             </a>
+                        </li>
                     @endforeach
                 </ul>
-            </div>
-            
-        </div>
+            </div> 
 
+        </div>
+        
     </div>
 </div>
 
