@@ -35,3 +35,4 @@ Route::get('/players/edit/{id}', 'PlayersController@edit');
 Route::get('/players/{id}', 'PlayersController@show');
 Route::delete('/players/{id}', 'PlayersController@destroy');
 Route::post('/players/search', 'PlayersController@search');
+Route::get('/players/data/{id}', 'PlayersController@data');

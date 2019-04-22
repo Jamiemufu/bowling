@@ -22,7 +22,7 @@ class Player_game extends Model
     public function player_venue()
     {
 
-        return $this->hasMany('\App\Venue', 'id');
+        return $this->hasOne('\App\Venue', 'id');
 
     }
 
