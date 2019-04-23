@@ -701,6 +701,51 @@ main {
   text-align: center;
 }
 
+.create-players-container .players-stats-results {
+  padding-top: 15px;
+  margin: auto;
+  width: 100%;
+  max-width: 1000px;
+  padding-bottom: 50px;
+}
+
+.create-players-container .players-stats {
+  width: 100%;
+  margin: auto;
+  padding-top: 30px;
+  color: white;
+}
+
+.create-players-container .players-stats table {
+  margin: auto;
+  width: 95%;
+  color: white;
+  font-size: 13px;
+}
+
+.create-players-container .players-stats table th {
+  color: gold;
+}
+
+.create-players-container .players-stats table td {
+  padding-top: 15px;
+}
+
+.create-players-container .players-stats table .round {
+  width: 40px;
+  text-align: center;
+}
+
+.create-players-container .players-stats table .score {
+  width: 40px;
+  text-align: center;
+}
+
+.create-players-container .players-stats table .home-away {
+  width: 60px;
+  text-align: center;
+}
+
 .create-players-container .players-box {
   margin: auto;
   padding: 50px;

@@ -15,21 +15,21 @@ class Player_game extends Model
     public function player()
     {
 
-        return $this->hasOne('\App\Player', 'id');
+        return $this->hasOne('\App\Player', 'id', 'player_id');
         
     }
 
     public function player_venue()
     {
 
-        return $this->hasOne('\App\Venue', 'id');
+        return $this->hasOne('\App\Venue', 'id', 'venue_played');
 
     }
 
     public function game()
     {
 
-        return $this->hasOne('\App\Game', 'id');
+        return $this->hasOne('\App\Game', 'id', 'game_id');
 
     }
 

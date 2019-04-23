@@ -41,6 +41,12 @@ class PlayersController extends Controller
     public function store(Request $request)
     {
         
+        $validatedData = $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'club' => 'required'
+        ]);
+
         $player = new \App\Player;
         $player->first_name=$request->input('first_name');
         $player->last_name=$request->input('last_name');
@@ -128,21 +134,13 @@ class PlayersController extends Controller
         
     }
 
-    public function data($id)
+    public function stats($id)
     {
 
         // TODO Select all from all player game where play ID = ID
-        $data = \App\Player_game::where('player_id', 1)->with('player')->with('player_venue')->with('game')->first();
-
-        dump($data->player->club);
-        dump($data->player->first_name);
-        dump($data->player->last_name);
-        dump($data->round_played);
-        dump($data->score);
-        dump($data->home_away);
-        dump($data->player_venue->name);
-
-        dump($data); die;
+        $stats = \App\Player_game::where('id', $id)->with('player')->with('player_venue')->with('game')->get();
+       
+        return view('pages.players.stats')->with('stats', $stats);
 
     }
 }

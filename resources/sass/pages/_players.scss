@@ -68,6 +68,70 @@
         }
     }
 
+    .players-stats-results {
+        padding-top: 15px;
+        margin: auto;
+        width: 100%;
+        max-width: 1000px;
+        padding-bottom: 50px;
+    }
+
+    .players-stats {
+        width: 100%;
+        margin: auto;
+        padding-top: 30px;
+        color:white;
+
+        table {
+            margin: auto;
+            width: 95%;
+            color: white;
+            font-size: 13px;
+            th {
+                color: $gold;
+            }
+            td {
+                padding-top: 15px;
+            }
+            .first {
+                
+            }
+
+            .last {
+
+            }
+
+            .club {
+
+            }
+
+            .date {
+
+            }
+
+            .round {
+                width: 40px;
+                    text-align: center;
+                
+            }
+            
+            .score {
+                width: 40px;
+                text-align: center;  
+            }
+
+            .home-away {
+                width: 60px;
+                text-align: center;
+            }
+
+            .venue {
+
+            }
+
+        }
+    }
+
     .players-box {
         margin: auto;
        
@@ -99,7 +163,7 @@
         max-width: 800px;
         padding-bottom: 50px;
     }
-
+   
     .players-header {
         color: white;
         text-transform: uppercase;
