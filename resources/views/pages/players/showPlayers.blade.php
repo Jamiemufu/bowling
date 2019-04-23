@@ -31,7 +31,7 @@
             <div>
                 <form action="/players/search" method="POST">
                     @csrf
-                    <input type="text" name="search" placeholder="Search Players">
+                    <input type="text" name="search" placeholder="Search Players" required>
                     <a href="/players/search">
                         <button>Search Players</button>
                     </a>
@@ -58,6 +58,11 @@
                     <td> {{$player->first_name}}</td>
                     <td> {{$player->last_name}}</td>
                     <td> {{$player->club}}</td>
+                    <td class="player-delete stack"> 
+                        <a href="{{ action('PlayersController@stats', $player->id) }}">
+                           Stats
+                        </a>
+                    </td>
                     <td class="player-edit stack"> 
                         <a href="{{ action('PlayersController@edit', $player->id) }}">
                             Edit

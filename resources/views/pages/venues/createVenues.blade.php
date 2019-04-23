@@ -16,7 +16,7 @@
             <form action="/venues" method="POST">
                 @csrf
                 
-                <input type="text" placeholder="Venue Name" name="venue_name">
+                <input type="text" placeholder="Venue Name" name="venue_name" required>
             
                 <button>Submit</button>
 

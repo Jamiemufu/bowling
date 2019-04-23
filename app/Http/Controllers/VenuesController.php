@@ -38,7 +38,10 @@ class VenuesController extends Controller
     */
     public function store(Request $request)
     {
-        
+        $validatedData = $request->validate([
+            'venue_name' => 'required'
+        ]);
+           
         $venue = new \App\Venue;
         $venue->name=$request->input('venue_name');
         $venue->save();
