@@ -127,4 +127,22 @@ class PlayersController extends Controller
         return view('pages.players.showPlayers')->with('players', $players);
         
     }
+
+    public function data($id)
+    {
+
+        // TODO Select all from all player game where play ID = ID
+        $data = \App\Player_game::where('player_id', 1)->with('player')->with('player_venue')->with('game')->first();
+
+        dump($data->player->club);
+        dump($data->player->first_name);
+        dump($data->player->last_name);
+        dump($data->round_played);
+        dump($data->score);
+        dump($data->home_away);
+        dump($data->player_venue->name);
+
+        dump($data); die;
+
+    }
 }
