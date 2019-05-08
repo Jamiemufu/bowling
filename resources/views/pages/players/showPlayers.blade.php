@@ -63,11 +63,11 @@
                            Stats
                         </a>
                     </td>
-                    <td class="player-edit stack"> 
+                    {{-- <td class="player-edit stack"> 
                         <a href="{{ action('PlayersController@edit', $player->id) }}">
                             Edit
                         </a>
-                    </td>
+                    </td> --}}
                     <td class="player-delete stack"> 
                         <a href="{{ action('PlayersController@destroy', $player->id) }}">
                            Delete

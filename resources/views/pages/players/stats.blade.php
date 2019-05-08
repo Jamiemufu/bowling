@@ -29,6 +29,10 @@
                         <th class="score">Score</th>
                         <th>Result</th>
                     </tr>            
+                    {{-- TODO ADD WHO PLAYED
+                        ADD FOR/AGAINST 
+                        ADD COUNTY PLAYED 
+                        ADD POSITION--}}
                     @foreach ($stats as $stat)            
                     <tr>           
                         <td> {{$stat->game->date}}</td>                             

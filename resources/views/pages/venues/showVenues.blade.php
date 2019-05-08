@@ -32,7 +32,7 @@
                 </ul>
             </div>
 
-            <div class="venue-edit">
+            {{-- <div class="venue-edit">
                 <ul>
                     @foreach ($venues as $venue)
                         <li class="venues-edit">
@@ -42,7 +42,7 @@
                         </li>
                     @endforeach
                 </ul>
-            </div>
+            </div> --}}
 
             <div class="venue-delete">
                 <ul>
