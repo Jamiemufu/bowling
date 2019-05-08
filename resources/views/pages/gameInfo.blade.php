@@ -52,6 +52,7 @@
             <div class="more-info-players">
                 <table>
                     <tr>
+                        <th>Rnd</th>
                         <th>Name</th>
                         <th>Club</th>
                         <th>Score</th>
@@ -60,6 +61,7 @@
                     @foreach ($home_games as $player)
                         @if($player->home_away === 'away')
                             <tr>
+                                <td class=player-round>{{$player->round_played}}</td>
                                 <td class="player-name">{{ $player->player->first_name }} {{ $player->player->last_name }}</td>
                                 <td class=player-club>{{ $player->player->club }}</td>
                                 <td class="player-score">{{ $player->score }}</td>
@@ -117,18 +119,20 @@
                 <div class="more-info-players">
                     <table>
                         <tr>
+                            <th>Rnd</th>
                             <th>Name</th>
                             <th>Club</th>
                             <th>Score</th>
                         </tr>
-
-                        @foreach ($away_games as $player)
+    
+                        @foreach ($home_games as $player)
                             @if($player->home_away === 'away')
-                        <tr>
-                            <td class="player-name">{{ $player->player->first_name }} {{ $player->player->last_name }}</td>
-                            <td class=player-club>{{ $player->player->club }}</td>
-                            <td class="player-score">{{ $player->score }}</td>
-                        </tr>
+                                <tr>
+                                    <td class=player-round>{{$player->round_played}}</td>
+                                    <td class="player-name">{{ $player->player->first_name }} {{ $player->player->last_name }}</td>
+                                    <td class=player-club>{{ $player->player->club }}</td>
+                                    <td class="player-score">{{ $player->score }}</td>
+                                </tr>
                             @endif
                         @endforeach
                     </table>

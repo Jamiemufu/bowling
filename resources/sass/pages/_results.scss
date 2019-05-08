@@ -7,7 +7,7 @@
     border-left: none;
     width: 100%;
     border-top: none;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     color: white;
     p {
         font-size: 16px;
@@ -66,32 +66,20 @@
 
 .results-container__main {
     margin: auto;
-    max-width: 1000px;
-    height: 120px;
+    max-width: 800px;
+    height: 80px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     overflow: hidden;
-
-    .results-logo {
-        width: 120px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img {
-            height: 120px;
-            width: auto;
-        }
-    }
-
+   
     .results-team {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 230px;
+        width: 400px;
 
         .results-team__header {
             height: 70px;
@@ -99,12 +87,11 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            flex-grow: 1;
-            padding: 15px;
+            flex-grow: 1;            
             text-align: center;
 
             p {
-                font-size: 18px;
+                font-size: 20px;
                 font-weight: normal;
             }
         }
@@ -183,14 +170,13 @@
             height: 100%;
         }
 
-        .results-team {
-            padding: 15px;
+        .results-team {            
             width: 100%;
         }
 
         .results-vs {
             height: 10px;
-            padding-top: 30px;
+            padding: 15px 0;
         }
     }
 }

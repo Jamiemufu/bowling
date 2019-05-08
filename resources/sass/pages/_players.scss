@@ -68,6 +68,12 @@
         }
     }
 
+    .players-stats__mobile {
+        span {
+            font-weight: bold;
+            color: $gold;
+        }
+    }
     .players-stats-results {
         padding-top: 15px;
         margin: auto;
@@ -76,6 +82,10 @@
         padding-bottom: 50px;
     }
 
+    .players-stats__mobile {
+        display: none !important;
+    }
+    
     .players-stats {
         width: 100%;
         margin: auto;
@@ -273,6 +283,23 @@
 
     }
 
+    @media (max-width: 600px) {
+        .players-stats__mobile {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .players-stats__desktop {
+            display: none !important;
+        }
+
+        .players-stats {
+            text-align: center;
+            border-bottom: 1px solid white;
+            padding-bottom: 50px;
+        }
+    }
     @media(max-width: 500px) {
         .players-form {
             form {

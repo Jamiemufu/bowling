@@ -16,7 +16,6 @@
     <div class="results-container__title">
 
         <div class="results-info">
-
             <p class="more-info-button">
                 <!-- if request is /results show more info -->
                 @if (request()->is('/'))
@@ -25,7 +24,6 @@
                     <a href="/"> Go back... </a>
                 @endif
             </p>
-
         </div>
 
     </div>
@@ -33,22 +31,18 @@
     {{-- main results --}}
     <div class="results-container__main">
 
-        <!-- First Team -->
-
-        <div class="results-logo">
-            <img src="{{ asset('images/logo.png') }}" alt="">
-        </div>
-
         <!-- Team one results and name -->
         <div class="results-team">
-
             <div class="results-team__header">
                 <p>{{ $game->home_team }}</p>
-            </div>
+            </div>            
+        </div>
 
+         <!-- Team one results and name -->
+         <div class="results-team">
             <div class="results-team__score first-score">
-                <p class="score">{{ $game->home_score }}</p>
-            </div>
+                <p>{{ $game->home_score }}</p>
+            </div>                
         </div>
 
         <!-- VS -->
@@ -57,21 +51,17 @@
         </div>
 
         <div class="results-team">
-
-            <div class="results-team__header">
-                <p>{{ $game->away_team }}</p>
-            </div>
-
             <div class="results-team__score second-score">
                 <p class="score">{{ $game->away_score }}</p>
             </div>
-
         </div>
 
-        <div class="results-logo">
-            <img src="{{ asset('images/logo.png') }}" alt="">
+        <div class="results-team">
+            <div class="results-team__header">
+                <p>{{ $game->away_team }}</p>
+            </div>
         </div>
-        
+
     </div>
 </div>
 {{-- END RESULT --}}

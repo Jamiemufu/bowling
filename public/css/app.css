@@ -112,7 +112,7 @@ main {
   border-left: none;
   width: 100%;
   border-top: none;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   color: white;
 }
 
@@ -169,8 +169,8 @@ main {
 
 .results-container__main {
   margin: auto;
-  max-width: 1000px;
-  height: 120px;
+  max-width: 800px;
+  height: 80px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -178,24 +178,12 @@ main {
   overflow: hidden;
 }
 
-.results-container__main .results-logo {
-  width: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.results-container__main .results-logo img {
-  height: 120px;
-  width: auto;
-}
-
 .results-container__main .results-team {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 230px;
+  width: 400px;
 }
 
 .results-container__main .results-team .results-team__header {
@@ -205,12 +193,11 @@ main {
   align-items: center;
   flex-direction: column;
   flex-grow: 1;
-  padding: 15px;
   text-align: center;
 }
 
 .results-container__main .results-team .results-team__header p {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: normal;
 }
 
@@ -283,13 +270,12 @@ main {
   }
 
   .results-container__main .results-team {
-    padding: 15px;
     width: 100%;
   }
 
   .results-container__main .results-vs {
     height: 10px;
-    padding-top: 30px;
+    padding: 15px 0;
   }
 }
 
@@ -438,6 +424,10 @@ main {
 .more-info-players ul {
   list-style: none;
   padding: 0;
+}
+
+.more-info-players th {
+  color: gold;
 }
 
 @media (max-width: 700px) {
@@ -701,12 +691,21 @@ main {
   text-align: center;
 }
 
+.create-players-container .players-stats__mobile span {
+  font-weight: bold;
+  color: gold;
+}
+
 .create-players-container .players-stats-results {
   padding-top: 15px;
   margin: auto;
   width: 100%;
   max-width: 800px;
   padding-bottom: 50px;
+}
+
+.create-players-container .players-stats__mobile {
+  display: none !important;
 }
 
 .create-players-container .players-stats {
@@ -893,6 +892,24 @@ main {
 
 .create-players-container .players-delete .confirm button {
   margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .create-players-container .players-stats__mobile {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .create-players-container .players-stats__desktop {
+    display: none !important;
+  }
+
+  .create-players-container .players-stats {
+    text-align: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 50px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -11576,6 +11593,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  background: #05002f;
 }
 
 main {
